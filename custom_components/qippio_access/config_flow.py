@@ -20,7 +20,7 @@ class QippioAccessConfigFlow(
     config_entries.ConfigFlow,
     domain=DOMAIN,
 ):
-    """Handle a Qippio Access config flow."""
+    """Handle the Qippio Access config flow."""
 
     VERSION = 1
 
@@ -44,6 +44,12 @@ class QippioAccessConfigFlow(
         user_input: dict[str, Any] | None = None,
     ) -> FlowResult:
         """Handle initial setup."""
+
+        # Only one Qippio Access instance is allowed.
+        if self._async_current_entries():
+            return self.async_abort(
+                reason="single_instance_allowed"
+            )
 
         if user_input is not None:
             return self.async_create_entry(
@@ -72,7 +78,7 @@ class QippioAccessConfigFlow(
         self,
         user_input: dict[str, Any] | None = None,
     ) -> FlowResult:
-        """Allow the Qippio configuration to be changed."""
+        """Reconfigure Qippio Access."""
 
         entry = self._get_reconfigure_entry()
 
