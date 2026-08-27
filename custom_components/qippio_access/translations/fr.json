@@ -17,6 +17,9 @@
           "client_user_id": "Compte client"
         }
       }
+    },
+    "abort": {
+      "single_instance_allowed": "Une seule configuration Qippio Access est autorisée."
     }
   }
 }
