@@ -8,6 +8,14 @@
           "installer_user_id": "Compte Qippio",
           "client_user_id": "Compte client"
         }
+      },
+      "reconfigure": {
+        "title": "Modifier Qippio Access",
+        "description": "Modifiez le compte Qippio ou le compte client autorisé.",
+        "data": {
+          "installer_user_id": "Compte Qippio",
+          "client_user_id": "Compte client"
+        }
       }
     }
   }
